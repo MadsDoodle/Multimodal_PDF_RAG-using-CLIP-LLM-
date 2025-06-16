@@ -113,6 +113,7 @@ multimodal-rag-app/
 ├── .gitignore                # Specifies files and folders for Git to ignore
 ├── requirements.txt          # All project dependencies
 └── README.md                 # This file
+```
 
 ---
 
