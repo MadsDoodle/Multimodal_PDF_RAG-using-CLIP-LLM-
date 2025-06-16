@@ -1,0 +1,17 @@
+unstructured[pdf]
+pdf2image
+Pillow
+llama-index
+torch
+torchvision
+git+https://github.com/openai/CLIP.git
+qdrant-client
+openai
+python-dotenv
+streamlit
+ftfy
+regex
+tqdm
+pdfminer.six
+llama-index-vector-stores-chroma
+llama-index-vector-stores-qdrant
