@@ -9,6 +9,10 @@ This project implements a **Multimodal Retrieval-Augmented Generation (RAG)** sy
 It combines **CLIP-based semantic embeddings** with **LLM (GPT-4o-mini)** powered summarization, enabling two powerful retrieval strategies through a unified Streamlit interface.
 
 > 🔎 Choose between **raw CLIP semantic search** or **contextual GPT summary search** — all via a simple web UI.
+---
+### 🖼️ Workflow Diagram
+
+![Workflow](assets/working.jpeg)
 
 ---
 
