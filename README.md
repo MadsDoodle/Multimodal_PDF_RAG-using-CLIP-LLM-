@@ -57,7 +57,7 @@ You can run the entire project from **Colab or Jupyter Notebook** without settin
 
 ---
 
-##  flowchart WorkFlow Diagram
+##  Workflow Diagram
 
 This diagram illustrates the complete user workflow, from placing a PDF to querying it with either the GPT or CLIP method.
 
@@ -67,19 +67,19 @@ graph TD
     B --> C{2. Run Ingestion Script};
 
     subgraph "Data Ingestion (One-Time Setup)"
-        C --> D[python -m backend.ingest --method gpt];
+        C --> D["python -m backend.ingest --method gpt"];
         D --> E[Process PDF (Text & Images)];
         E --> F[Generate Summaries with GPT-4o];
         F --> G[Generate OpenAI Embeddings];
         G --> H[(Qdrant GPT DB)];
 
-        C --> I[python -m backend.ingest --method clip];
+        C --> I["python -m backend.ingest --method clip"];
         I --> J[Process PDF (Text & Images)];
         J --> K[Generate CLIP Embeddings];
         K --> L[(Qdrant CLIP DB)];
     end
 
-    M{3. Launch Streamlit App} --> N[streamlit run frontend/app.py];
+    M{3. Launch Streamlit App} --> N["streamlit run frontend/app.py"];
 
     subgraph "Interactive Querying"
         N --> O{User Interface};
@@ -93,11 +93,12 @@ graph TD
 
     H --> Q;
     L --> Q;
-```
+
 ---
 
-## Project Directory Structure
+### 🗂️ Project Directory Structure
 
+```plaintext
 multimodal-rag-app/
 ├── backend/
 │   ├── config.py             # All configurations, paths, and model names
@@ -107,7 +108,7 @@ multimodal-rag-app/
 │   └── app.py                # The Streamlit user interface code
 ├── resources/
 │   └── pdfs/
-│       └── 6._price_trends.pdf # << PLACE YOUR PDF HERE
+│       └── 6._price_trends.pdf  # << PLACE YOUR PDF HERE
 ├── .env                      # For storing your secret OpenAI API key
 ├── .gitignore                # Specifies files and folders for Git to ignore
 ├── requirements.txt          # All project dependencies
