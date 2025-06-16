@@ -62,37 +62,41 @@ You can run the entire project from **Colab or Jupyter Notebook** without settin
 This diagram illustrates the complete user workflow, from placing a PDF to querying it with either the GPT or CLIP method.
 
 ```mermaid
+### 🧭 Workflow Diagram
+
+```mermaid
 graph TD
     A[Start] --> B{1. Place Your PDF};
     B --> C{2. Run Ingestion Script};
 
     subgraph "Data Ingestion (One-Time Setup)"
-        C --> D["python -m backend.ingest --method gpt"];
-        D --> E[Process PDF (Text & Images)];
+        C --> D[Run GPT Ingest];
+        D --> E[Process PDF Text and Images];
         E --> F[Generate Summaries with GPT-4o];
         F --> G[Generate OpenAI Embeddings];
-        G --> H[(Qdrant GPT DB)];
+        G --> H[Qdrant GPT DB];
 
-        C --> I["python -m backend.ingest --method clip"];
-        I --> J[Process PDF (Text & Images)];
+        C --> I[Run CLIP Ingest];
+        I --> J[Process PDF Text and Images];
         J --> K[Generate CLIP Embeddings];
-        K --> L[(Qdrant CLIP DB)];
+        K --> L[Qdrant CLIP DB];
     end
 
-    M{3. Launch Streamlit App} --> N["streamlit run frontend/app.py"];
+    M{3. Launch Streamlit App} --> N[streamlit run frontend/app.py];
 
     subgraph "Interactive Querying"
-        N --> O{User Interface};
+        N --> O[User Interface];
         O --> P[Enter Query];
-        P --> Q{Select Method: GPT or CLIP};
-        Q -- GPT --> R[Query Qdrant GPT DB];
-        Q -- CLIP --> S[Query Qdrant CLIP DB];
+        P --> Q{Select Method};
+        Q -->|GPT| R[Query Qdrant GPT DB];
+        Q -->|CLIP| S[Query Qdrant CLIP DB];
         R --> T[Display Results];
         S --> T;
     end
 
     H --> Q;
     L --> Q;
+
 ```
 ---
 
