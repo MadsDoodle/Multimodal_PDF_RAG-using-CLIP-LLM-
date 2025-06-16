@@ -57,11 +57,6 @@ You can run the entire project from **Colab or Jupyter Notebook** without settin
 
 ---
 
-##  Workflow Diagram
-
-This diagram illustrates the complete user workflow, from placing a PDF to querying it with either the GPT or CLIP method.
-
-```mermaid
 ### 🧭 Workflow Diagram
 
 ```mermaid
