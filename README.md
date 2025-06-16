@@ -10,7 +10,7 @@ It combines **CLIP-based semantic embeddings** with **LLM (GPT-4o-mini)** powere
 
 > 🔎 Choose between **raw CLIP semantic search** or **contextual GPT summary search** — all via a simple web UI.
 ---
-### 🖼️ Workflow Diagram
+### 🖼️ Streamlit UI
 
 ![Workflow](assets/working.jpeg)
 
