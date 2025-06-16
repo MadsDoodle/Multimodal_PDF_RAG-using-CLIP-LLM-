@@ -182,6 +182,7 @@ Once the ingestion is complete for both methods, you can start the interactive u
 
 ```bash
 streamlit run frontend/app.py
+```
 
 ## 📄 License
 
